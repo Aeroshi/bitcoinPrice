@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">BitcoinPrice</string>
     <string name="home">Home</string>
+    <string name="error">Error al obtener datos. Vuelve a intentarlo.</string>
+    <string name="one_year">1 Ano</string>
+    <string name="threeYear">3 anos</string>
+    <string name="thirtyDays">30 dias</string>
+    <string name="all">Sempre</string>
 </resources>

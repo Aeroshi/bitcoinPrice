@@ -90,6 +90,9 @@ android {
         implementation "androidx.work:work-runtime-ktx:$workVersion"
         kapt "android.arch.persistence.room:compiler:1.1.1"
 
+        //charts
+        implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
 
     }
 

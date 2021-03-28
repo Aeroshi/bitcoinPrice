@@ -1,4 +1,4 @@
-package com.aeroshi.bitcoinprice.util.enuns
+package com.aeroshi.bitcoinprice.data.entitys.enuns
 
 enum class ErrorType {
     NONE,

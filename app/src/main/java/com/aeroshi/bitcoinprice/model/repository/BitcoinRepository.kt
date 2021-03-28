@@ -5,7 +5,7 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class bitcoinRepository {
+class BitcoinRepository {
 
     fun doMaketPrice(timespan: String): Single<String> {
         return NetworkAPI.getGitService()
