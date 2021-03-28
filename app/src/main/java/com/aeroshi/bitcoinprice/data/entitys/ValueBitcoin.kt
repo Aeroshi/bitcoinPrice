@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "valuesBitcoin")
 data class ValueBitcoin(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
     @SerializedName("x") val dateInTimeStamp : Int,
     @SerializedName("y") val price : Double

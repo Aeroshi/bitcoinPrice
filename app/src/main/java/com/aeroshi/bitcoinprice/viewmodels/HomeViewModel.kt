@@ -47,8 +47,8 @@ class HomeViewModel(
                 .subscribeBy(
                     onSuccess = { jsonResult ->
                         try {
-                            var test = marketPriceJsonParser(jsonResult)
-                            setResult(marketPriceJsonParser(jsonResult).values, context)
+                            val values = marketPriceJsonParser(jsonResult).values
+                            setResult(values, context)
                         } catch (exception: Exception) {
                             mBitcoinsValuesResult.value = Pair(null, ErrorType.PARSER)
                             logError(TAG, "Error on parser response of doMaketPrice", exception)
@@ -63,8 +63,13 @@ class HomeViewModel(
     }
 
     private fun setResult(valuesBitcoin: List<ValueBitcoin>, context: Context) {
-        saverRepOnDb(valuesBitcoin, context)
-        mBitcoinsValuesResult.value = Pair(valuesBitcoin, ErrorType.NONE)
+        if(valuesBitcoin.isNullOrEmpty())
+            mBitcoinsValuesResult.value = Pair(valuesBitcoin, ErrorType.PARSER)
+        else{
+            saverRepOnDb(valuesBitcoin, context)
+            mBitcoinsValuesResult.value = Pair(valuesBitcoin, ErrorType.NONE)
+        }
+
     }
 
     private fun saverRepOnDb(reps: List<ValueBitcoin>, context: Context) {
